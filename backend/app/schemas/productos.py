@@ -1,10 +1,11 @@
 from pydantic import BaseModel
 
-class ProductoRespuesta(BaseModel):
-    id: int
-    nombre: str
-    categoria: str  # Category name
-    precio_unit: float
-    stock_actual: int
-    stock_minimo: int
+class ProductResponse(BaseModel):
 
+    id: int
+    name: str
+    current_stock: int
+    category: str
+
+    class Config:
+        from_attributes = True
