@@ -9,7 +9,6 @@ function ProductosItems({
   setProductoSeleccionado,
   nombre,
   precio,
-  descripcion,
   categoria,
   stock,
   stock_minimo,
@@ -31,19 +30,15 @@ function ProductosItems({
           <h2 className="font-semibold text-lg">
             {nombre}
           </h2>
-
-          {/* <p className="text-sm text-gray-500">
-            {categoria}
-          </p> */}
         </div>
        
         <p className="text-sm text-gray-500">
-              {categoria.toUpperCase()}
+              {categoria}
             </p>
 
-        <p className="text-gray-700 flex-1">
+        {/* <p className="text-gray-700 flex-1">
           {descripcion}
-        </p>
+        </p> */}
 
         <p className="font-semibold w-24">
           ${precio} <span className="font-light text-sm">(c/u)</span>

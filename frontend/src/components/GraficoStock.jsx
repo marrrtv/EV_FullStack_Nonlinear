@@ -11,7 +11,7 @@ function GraficoStock({ productos }) {
 
   productos.forEach((producto) => {
 
-    const categoria = producto.categoria;
+    const categoria = producto.categoria.nombre;
 
     // si la categoría no existe todavía, la creamos
     if (!categoriasMap[categoria]) {

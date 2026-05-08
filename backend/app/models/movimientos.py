@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from datetime import datetime
 import enum
 
@@ -6,7 +8,6 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
-from app.models.productos import Producto
 
 class TipoMovimiento(enum.Enum):
     ENTRADA = "entrada"
