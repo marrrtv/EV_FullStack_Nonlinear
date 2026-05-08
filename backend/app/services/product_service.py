@@ -39,6 +39,50 @@ mock_products = [
             "id": 2,
             "nombre": "Muebles"
         }
+    },
+    {
+        "id": 4,
+        "nombre": "Escritorio Oficina",
+        "precio_unitario": 1000,
+        "stock_actual": 18,  
+        "stock_minimo": 5,
+        "categoria": {
+            "id": 2,
+            "nombre": "Muebles"
+        }
+    },
+    {
+        "id": 5,
+        "nombre": "Papel A4",
+        "precio_unitario": 136,
+        "stock_actual": 5,  
+        "stock_minimo": 1,
+        "categoria": {
+            "id": 3,
+            "nombre": "Papeleria"
+        }
+    },
+    {
+        "id": 6,
+        "nombre": "Lapiceras Azules",
+        "precio_unitario": 15,
+        "stock_actual": 5,  
+        "stock_minimo": 20,
+        "categoria": {
+            "id": 3,
+            "nombre": "Papeleria"
+        }
+    },
+    {
+        "id": 7,
+        "nombre": "Lapiceras Rojas",
+        "precio_unitario": 17,
+        "stock_actual": 35,  
+        "stock_minimo": 20,
+        "categoria": {
+            "id": 3,
+            "nombre": "Papeleria"
+        }
     }
 ]
 
