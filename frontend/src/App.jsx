@@ -22,7 +22,7 @@ function App() {
     try {
       // fetch hace una request HTTP al backend a la ruta /productos, que devuelve un JSON con el listado de productos
       const response = await fetch(
-        "http://localhost:8000/productos"
+        "http://localhost:8000/v1/productos"
       );
 
       const productosJSON = await response.json();

@@ -1,8 +1,3 @@
-from typing import Optional
-
-from sqlalchemy.orm import Session
-
-from app.models.productos import Producto
 from app.schemas.productos import ProductResponse
 
 # bd mockeada 
@@ -112,33 +107,3 @@ def get_productos(category: str | None = None):
         )
 
     return response
-
-
-# # servicio para obtener productos, con opción de filtrar por categoría
-# def get_productos(db: Session, categoria: str | None = None): 
-
-#     # query ORM
-#     query = db.query(Producto)
-
-#     # filtro opcional
-#     if categoria:
-#         query = query.join(Producto.categoria).filter(
-#             Producto.categoria.has(name=categoria)
-#         )
-
-#     products = query.all()
-
-#     response = []
-
-#     for product in products:
-
-#         response.append(
-#             ProductResponse(
-#                 id=product.id,
-#                 name=product.name,
-#                 current_stock=product.current_stock,
-#                 category=product.categoria.name
-#             )
-#         )
-
-#     return response
