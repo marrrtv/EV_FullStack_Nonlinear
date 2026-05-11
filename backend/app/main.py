@@ -3,30 +3,29 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.db.base import Base
-from app.db.session import engine
+from app.db.session import engine, SessionLocal
 from app.db.seed import seed_database
-from app.db.session import SessionLocal
-
 
 # IMPORTANTE: Importar TODOS los modelos antes de crear las tablas
 import app.models.categorias
 import app.models.productos
-import app.models.movimientos  # ← FALTABA ESTE
+import app.models.movimientos  
 
 from app.routes.productos import router as productos_router
 
-# Configurar logging
+# configurar logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-# Reemplazar la línea de crear tablas con:
-Base.metadata.create_all(bind=engine)
+# crear tablas con los modelos ORM sqlalchemy
+Base.metadata.create_all(bind=engine) # en un proyecto real utilizaría migraciones con Alembic para versionar cambios de esquema.
 logger.info("Tablas de BD creadas/verificadas")
-# Lifespan event para inicializar datos
+
+# lifespan para manejar startup y shutdown de la aplicación
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: Inicializar datos
+
+    # startup: Inicializar datos
     db = SessionLocal()
     try:
         seed_database(db)
@@ -38,7 +37,7 @@ async def lifespan(app: FastAPI):
     
     yield
     
-    # Shutdown
+    # shutdown
     logger.info("API cerrándose")
 
 app = FastAPI(
