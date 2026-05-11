@@ -1,10 +1,15 @@
 from pydantic import BaseModel
+from decimal import Decimal
 
-class ProductoRespuesta(BaseModel):
+from .categorias import CategoriaResponse  
+
+class ProductoResponse(BaseModel):
     id: int
     nombre: str
-    categoria: str  # Category name
-    precio_unit: float
+    precio_unitario: float
     stock_actual: int
     stock_minimo: int
+    categoria: CategoriaResponse  # Ahora es un objeto
 
+    class Config:
+        from_attributes = True
