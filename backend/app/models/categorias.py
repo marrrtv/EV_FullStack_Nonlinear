@@ -1,8 +1,9 @@
-from sqlalchemy import Column, Integer, String
+from __future__ import annotations
+
+from sqlalchemy import String
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
 from app.db.base import Base
-from app.models.productos import Producto
 
 class Categoria(Base):
     __tablename__ = "categorias"

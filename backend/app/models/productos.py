@@ -1,10 +1,11 @@
-from sqlalchemy import CheckConstraint, String, ForeignKey, String, ForeignKey, Numeric, CheckConstraint
+
+from __future__ import annotations
+
+from sqlalchemy import CheckConstraint, String, ForeignKey, Numeric
 from decimal import Decimal
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
-# from app.models.productos import Categoria
-# from app.models.movimientos import Movimiento
 
 class Producto(Base):
     __tablename__ = "productos"

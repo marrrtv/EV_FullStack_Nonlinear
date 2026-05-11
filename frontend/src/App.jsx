@@ -86,8 +86,7 @@ function App() {
                 setProductoSeleccionado={setProductoSeleccionado}
                 nombre={producto.nombre}
                 precio={producto.precio_unitario}
-                descripcion={producto.descripcion}
-                categoria={producto.categoria}
+                categoria={producto.categoria.nombre}
                 stock={producto.stock_actual}
                 stock_minimo={producto.stock_minimo}
               />
