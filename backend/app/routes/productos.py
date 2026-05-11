@@ -4,7 +4,7 @@ from app.db.dependencies import get_db
 from app.services.product_service import get_productos
 from app.schemas.productos import ProductoResponse
 
-router = APIRouter(prefix="/productos", tags=["productos"]) #tags para la doc. automatica
+router = APIRouter(prefix="/v1/productos", tags=["productos"]) #tags para la doc. automatica
 
 @router.get("/", response_model=list[ProductoResponse])
 def list_products(
